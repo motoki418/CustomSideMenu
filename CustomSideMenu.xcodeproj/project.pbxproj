@@ -13,6 +13,7 @@
 		365F7E3627C09DE700BB036F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 365F7E3527C09DE700BB036F /* Preview Assets.xcassets */; };
 		365F7E3E27C09E8900BB036F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F7E3D27C09E8900BB036F /* MainView.swift */; };
 		365F7E4027C09E9300BB036F /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F7E3F27C09E9300BB036F /* SideMenuView.swift */; };
+		365F7E4227C0B7AB00BB036F /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365F7E4127C0B7AB00BB036F /* CustomTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		365F7E3527C09DE700BB036F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		365F7E3D27C09E8900BB036F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		365F7E3F27C09E9300BB036F /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
+		365F7E4127C0B7AB00BB036F /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				365F7E3027C09DE500BB036F /* ContentView.swift */,
+				365F7E4127C0B7AB00BB036F /* CustomTabView.swift */,
 				365F7E3D27C09E8900BB036F /* MainView.swift */,
 				365F7E3F27C09E9300BB036F /* SideMenuView.swift */,
 			);
@@ -153,6 +156,7 @@
 			files = (
 				365F7E3127C09DE500BB036F /* ContentView.swift in Sources */,
 				365F7E3E27C09E8900BB036F /* MainView.swift in Sources */,
+				365F7E4227C0B7AB00BB036F /* CustomTabView.swift in Sources */,
 				365F7E4027C09E9300BB036F /* SideMenuView.swift in Sources */,
 				365F7E2F27C09DE500BB036F /* CustomSideMenuApp.swift in Sources */,
 			);

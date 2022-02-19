@@ -9,11 +9,15 @@ import SwiftUI
 
 struct MainView: View {
     // Current Tab...
+    // サイドメニューで選択しているTabを判別するために使う状態変数
+    // 
     @State var currentTab: String = "Home"
     var body: some View {
         ZStack{
             // Custom Side Menu...
             SideMenuView(currentTab: $currentTab)
+            
+            // Main Tab View
         }
     }
 }
