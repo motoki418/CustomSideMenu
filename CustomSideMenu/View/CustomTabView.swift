@@ -43,7 +43,7 @@ struct CustomTabView: View {
                 }
             }// HStack
             .overlay(
-            
+                
                 Text(currentTab)
                     .font(.title2.bold())
                     .foregroundColor(.white)
@@ -53,12 +53,12 @@ struct CustomTabView: View {
             .padding([.horizontal,.top])
             .padding(.bottom,8)
             .padding(.top,getSafeArea().top)
-
+            
             TabView(selection: $currentTab){
                 
-                Text("Home")
+                HomeView()
                     .tag("Home")
-            // Repalace Your Custom Views here...
+                // Repalace Your Custom Views here...
                 Text("Discover")
                     .tag("Discover")
                 
@@ -69,6 +69,10 @@ struct CustomTabView: View {
                     .tag("Profile")
             }// TabView
         }// VStack
+        // Disabling actions when menu is visible...
+        // サイドメニューを表示している間はHomeViewのスクロールを無効にする
+        // showMenuがtrueならスクロール操作を無効にする
+        .disabled(showMenu)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         // .overlayはViewの上にViewを重ねることが出来るメソッド
         .overlay(
@@ -90,9 +94,7 @@ struct CustomTabView: View {
             
             ,alignment: .topLeading
         )
-        .background(
-            Color.black
-        )
+        .background(Color.black)
     }
 }
 

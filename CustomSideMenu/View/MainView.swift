@@ -22,6 +22,7 @@ struct MainView: View {
         //TabBarを非表示にする
         UITabBar.appearance().isHidden = true
     }
+    
     var body: some View {
         ZStack{
             // Custom Side Menu...
@@ -51,7 +52,6 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
-
 
 // Extending View to get Safe Area Values...
 extension View{

@@ -48,12 +48,10 @@ struct SideMenuView: View {
                     Spacer()
                     // making Logout as constant button with orange color...
                     CustomTabButton(icon: "rectangle.portrait.and.arrow.right", title: "Logout")
-                    
-                    
                 }// VStack
                 .padding()
                 .padding(.top, 45)
-            }
+            }// ScrollView
             //Max Width of screen width...
             .frame(width: getRect().width / 2, alignment: .leading)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -61,7 +59,7 @@ struct SideMenuView: View {
         .padding(.leading, 10)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .background(Color("BG"))
-    }
+    }// body
     
     // Custom Button...
     // サイドメニューに表示するボタンを作成
@@ -97,13 +95,12 @@ struct SideMenuView: View {
                     .foregroundColor(title == "Logout" ? Color("Orange") :.white)
             }//HStack
             .padding(.trailing,18)
-            
             .background(
                 ZStack{
                     if currentTab == title{
                         Color("Purple")
-                        .clipShape(Capsule())
-                        .matchedGeometryEffect(id: "TABCAPSULE", in: animation)
+                            .clipShape(Capsule())
+                            .matchedGeometryEffect(id: "TABCAPSULE", in: animation)
                     }
                 })
         }// Button
