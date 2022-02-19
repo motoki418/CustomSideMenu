@@ -14,6 +14,7 @@ struct SideMenuView: View {
     // Adding Smooth Transition between tabs with the help of
     // mathced Geometry Effect...
     @Namespace private var animation
+    
     var body: some View{
         VStack{
             HStack(spacing:15){
@@ -51,7 +52,7 @@ struct SideMenuView: View {
                     
                 }// VStack
                 .padding()
-                .padding(.top, 60)
+                .padding(.top, 45)
             }
             //Max Width of screen width...
             .frame(width: getRect().width / 2, alignment: .leading)
@@ -117,6 +118,8 @@ struct SideMenuView_Previews: PreviewProvider {
 }
 
 // Extending View to get Screen Bounds...
+// スクリーンサイズの取得を行うメソッド
+//　メソッドにまとめておくことで、画面のサイズを取得する処理を毎回記述しなくて良くなる。
 extension View{
     func getRect() -> CGRect {
         //SwiftUIで、UIScreenを使うとスクリーンサイズが取得できます。
