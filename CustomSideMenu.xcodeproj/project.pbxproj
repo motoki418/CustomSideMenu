@@ -79,10 +79,10 @@
 			isa = PBXGroup;
 			children = (
 				365F7E4327C0EBD300BB036F /* Tabs */,
-				365F7E3027C09DE500BB036F /* ContentView.swift */,
 				365F7E4127C0B7AB00BB036F /* CustomTabView.swift */,
 				365F7E3D27C09E8900BB036F /* MainView.swift */,
 				365F7E3F27C09E9300BB036F /* SideMenuView.swift */,
+				365F7E3027C09DE500BB036F /* ContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

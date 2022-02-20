@@ -70,8 +70,8 @@ struct CustomTabView: View {
             }// TabView
         }// VStack
         // Disabling actions when menu is visible...
-        // サイドメニューを表示している間はHomeViewのスクロールを無効にする
-        // showMenuがtrueならスクロール操作を無効にする
+        // サイドメニューを表示している間(showMenu == true)は、
+        //HomeViewのScrolloview(スクロール操作)を無効にする
         .disabled(showMenu)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         // .overlayはViewの上にViewを重ねることが出来るメソッド

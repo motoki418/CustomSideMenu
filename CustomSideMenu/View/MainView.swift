@@ -11,11 +11,9 @@ struct MainView: View {
     // Current Tab...
     // サイドメニューで選択しているTabを判別するために使う状態変数
     @State var currentTab: String = "Home"
-    
     // Menu Option...
     // サイドメニューの表示非表示を管理する状態変数
     @State var showMenu: Bool = false
-    
     // Hiding Native Tab Bar...
     // TabViewはデフォルトで画面の下にTabBarを表示するが、今回はサイドメニューを作成しているので非表示にする
     init() {
@@ -34,7 +32,7 @@ struct MainView: View {
                 .cornerRadius(showMenu ? 25 : 0)
             
             // Making 3D rotation...
-            // anchorでサイドメニューを半分以上開くようにする
+            // rotation3DEffectは指定された回転軸を中心に、3次元でViewを回転させる
                 .rotation3DEffect(.init(degrees: showMenu ? -15 : 0), axis: (x: 0, y: 1, z: 0), anchor: .trailing)
             // Moving View Apart
             // getRectメソッドでスクリーンサイズを取得できるので、ボタンタップ時にサイドメニューを、画面の半分になるようにする
