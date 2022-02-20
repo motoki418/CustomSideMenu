@@ -55,7 +55,6 @@ struct MainView_Previews: PreviewProvider {
 
 // Extending View to get Safe Area Values...
 extension View{
-    
     func getSafeArea() -> UIEdgeInsets {
         guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
             return .zero

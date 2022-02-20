@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct CustomTabView: View {
-    
+    //サイドメニューで選択しているTabを判別するために使う状態変数の値をMainViewと共有する
     @Binding var currentTab: String
-    
+    // サイドメニューの表示非表示を管理する状態変数の値をMainViewと共有する
     @Binding var showMenu: Bool
     
     var body: some View{
@@ -31,9 +31,11 @@ struct CustomTabView: View {
                 // Hiding When Menu is Visible...
                 .opacity(showMenu ? 0 : 1)
                 Spacer()
-                
                 Button{
-                    
+                    // Toggling Menu Option
+                    withAnimation(.spring()){
+                        showMenu.toggle()
+                    }
                 }label: {
                     Image("Pic")
                         .resizable()
@@ -43,7 +45,6 @@ struct CustomTabView: View {
                 }
             }// HStack
             .overlay(
-                
                 Text(currentTab)
                     .font(.title2.bold())
                     .foregroundColor(.white)
@@ -55,7 +56,6 @@ struct CustomTabView: View {
             .padding(.top,getSafeArea().top)
             
             TabView(selection: $currentTab){
-                
                 HomeView()
                     .tag("Home")
                 // Repalace Your Custom Views here...

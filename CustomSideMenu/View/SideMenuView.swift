@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct SideMenuView: View {
-    
+    //サイドメニューで選択しているTabを判別するために使う状態変数の値をMainViewと共有する
     @Binding var currentTab: String
     
     // Adding Smooth Transition between tabs with the help of
     // mathced Geometry Effect...
+    //シームレスなアニメーションを実装ためのmathcedGeometryEffectを適用する際に必要になる。
     @Namespace private var animation
     
     var body: some View{
@@ -85,10 +86,16 @@ struct SideMenuView: View {
                             if currentTab == title{
                                 Color.white
                                     .clipShape(Circle())
+                                //アニメーションさせたいViewに対して.matchedGeometryEffectを指定。
+                                //Heroアニメーションを実装するためにmatchedGeometryEffectを使う。
+                                //Heroアニメーションとは画面遷移時にコンテンツの比率を変えながら遷移して、
+                                //シームレスに移動したように見せるアニメーションのこと
+                                //識別子(id)とNamespace(@Namespace private var animationのこと)を与えて、
+                                //同期したいアニメーションをグルーピングする。
                                     .matchedGeometryEffect(id: "TABCIRCLE", in: animation)
-                            }
-                        }
-                    )
+                            }// if文
+                        }// ZStack
+                    )// .background
                 Text(title)
                     .font(.callout)
                     .fontWeight(.semibold)
@@ -102,7 +109,7 @@ struct SideMenuView: View {
                             .clipShape(Capsule())
                             .matchedGeometryEffect(id: "TABCAPSULE", in: animation)
                     }
-                })
+                })// .background
         }// Button
         .offset(x: currentTab == title ? 15 : 0)
     }// CustomTabButtonメソッド
@@ -115,7 +122,7 @@ struct SideMenuView_Previews: PreviewProvider {
 }
 
 // Extending View to get Screen Bounds...
-// スクリーンサイズの取得を行うメソッド
+// スクリーンサイズの取得をして、スクリーンサイズを返すメソッド
 //　メソッドにまとめておくことで、画面のサイズを取得する処理を毎回記述しなくて良くなる。
 extension View{
     func getRect() -> CGRect {
